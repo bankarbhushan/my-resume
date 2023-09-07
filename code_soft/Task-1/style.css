@@ -1,0 +1,436 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif; /* font family for the text style */
+}
+header {
+  background-image: url("./image/header.jpeg");
+  background-color: white; /* the white backgraund show behind the image */
+  background-position: center; /* position of image will be center */
+  background-repeat: no-repeat; /* not reaptation of image */
+  background-size: cover; /* for full size of image */
+  height: 100vh;
+}
+.container {
+  max-width: 1200px; /* auto width for the header content */
+  width: 90%;
+  margin: auto;
+}
+
+/* nav - bar  */
+.navbar {
+  position: fixed; /* the postion of the navbar will be fixed */
+  width: 100%;
+  z-index: 500; /* use for do not any content overlap to each other */
+}
+
+#my-logo {
+  color: #25b79f;
+  margin: 2rem;
+  text-shadow: 2px 2px 8px black;
+}
+
+.navbar-container {
+  display: flex;
+  /* to change the opposite position of navbar -brand the nav items   */
+  justify-content: space-between; /* al the nav item will the right  side */
+  align-items: center; /* for li element will the on the center */
+  height: 65px;
+}
+
+.nav-items {
+  display: flex;
+  /* nav element convert vartical postion to horizontal position */
+}
+
+.nav-items li {
+  list-style: none; /*  . will be remove */
+  padding: 1.2rem;
+}
+
+.nav-items a {
+  text-decoration: none; /* the bottem linke of a tage will be remove */
+  color: white;
+  font-size: 1rem;
+  padding: 0.4rem;
+}
+
+.nav-items a:hover {
+  border: 2px solid wheat;
+  border-radius: 5px;
+  background-color: black; /* when a user will hover backgraound will change */
+}
+
+.navbar.logo {
+  order: 1;
+  color: #f0f0e6;
+  font-size: 2rem;
+}
+
+/* Aboot section */
+.about-me {
+  background-color: #07374a;
+  padding: 6rem 0;
+}
+
+.about-me .about-heading {
+  color: #25b79f;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.about-content img {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #f0f0e6;
+  padding: 0 2.3rem;
+  text-align: center;
+}
+
+.skills .skills-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #25b79f;
+  text-align: center;
+}
+
+.about-me .about-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-content .left-content {
+  flex-basis: 45%;
+  text-align: center;
+}
+
+.about-content .right-content {
+  flex-basis: 45%;
+}
+
+/*.....Skill Bar......*/
+
+.skills-bar {
+  padding: 25px 30px;
+}
+
+.skills-bar .bar {
+  margin: 25px 0;
+}
+
+.skills-bar .bar .info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 8px;
+  color: #f0f0e6;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 550px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+  position: absolute;
+  background: #25b79f;
+  height: 100%;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-line .html {
+  width: 80%;
+}
+.progress-line .css {
+  width: 60%;
+}
+.progress-line .bootstrap {
+  width: 50%;
+}
+.progress-line .javascript {
+  width: 60%;
+}
+.progress-line .c {
+  width: 80%;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -12px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-style: #f0f0f0;
+  border-top-color: #f0f0f0;
+}
+
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: #07374a;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f0f0f0;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+.progress-line .html::after {
+  content: "80%";
+}
+.progress-line .css::after {
+  content: "60%";
+}
+.progress-line .bootstrap::after {
+  content: "50%";
+}
+.progress-line .javascript::after {
+  content: "60%";
+}
+.progress-line .c::after {
+  content: "80%";
+}
+
+.navbar.solid {
+  background-color: #07374a;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px rgb(7 55 74 / 20%);
+  z-index: 500;
+}
+
+.navbar.solid .navbar-brand {
+  display: inline-block;
+  color: #f0f0e6;
+  transition: color 1s ease 0s;
+}
+
+.navbar-brand {
+  display: none;
+  color: #f0f0e6;
+  font-weight: 400;
+}
+
+.work-arrow {
+  margin: 2rem 0;
+}
+
+.work-arrow a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #25b79f;
+}
+
+.work-arrow-2 {
+  margin: 2rem 0;
+}
+
+.work-arrow-2 a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #25b79f;
+  display: none;
+}
+
+/* project Section */
+.project {
+  background-color: #25b79f;
+  padding: 6rem 0;
+}
+.headline h1 {
+  color: #07374a;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.project-1 {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* discription willl be on center */
+}
+
+.project-1 img {
+  height: 330px;
+  width: 380px;
+  object-fit: cover;
+  box-shadow: 5px 6px 9px;
+  border-radius: 5px;
+  margin: 1.7rem;
+}
+
+.project-1 .project-deatils {
+  width: 32rem;
+}
+
+.project-1 .project-deatils i {
+  font-size: 1rem;
+  color: #07374a;
+}
+
+.project-1 .project-deatilsh h2 {
+  font-size: 2rem;
+  color: #07374a;
+}
+
+.project-1 .project-deatils p {
+  font-size: 1.3rem;
+  color: #07374a;
+  font-weight: 600;
+}
+
+.project-2 {
+  display: flex;
+}
+.project-2 img {
+  height: 330px;
+  width: 380px;
+  object-fit: cover;
+  box-shadow: 5px 6px 9px;
+  border-radius: 5px;
+  margin: 1.7rem;
+}
+
+.project-2 .project-deatils {
+  width: 32rem;
+}
+
+.project-2 .project-deatils i {
+  font-size: 1rem;
+  color: #07374a;
+}
+
+.project-2 .project-deatilsh h2 {
+  font-size: 2rem;
+  color: #07374a;
+}
+
+.project-2 .project-deatils p {
+  font-size: 1.3rem;
+  color: #07374a;
+  font-weight: 600;
+}
+
+/* resume Section */
+.resume {
+  background-color: #07374a;
+  height: fit-content;
+  padding: 2rem 0;
+}
+
+.resume-container .headline h1 {
+  color: wheat;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.content .title {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+.content h1 {
+  padding: 1.5rem 0;
+  color: aqua;
+}
+
+.content p {
+  color: #f0f0f0;
+  text-align: center;
+  padding: 3rem 0;
+}
+.content {
+  text-align: center;
+}
+.content .resume-btn {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 40px;
+  border-radius: 500px;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+  background-size: 152% 100%;
+  background: #0e0f12;
+  border: 2px solid;
+  box-shadow: 2px 3px 3px white;
+  text-align: center;
+}
+
+.resume-btn:hover {
+  background-color: transparent;
+  border-color: rgb(55, 241, 55);
+}
+/* contact section */
+
+.contact-container {
+  background-color: #25b79f;
+  height: 400px;
+}
+.contact-content {
+  padding: 5%;
+}
+.contact-content h2 {
+  font-size: 2.3rem;
+  color: #07374a;
+  text-align: center;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.contact-content p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f0f0e6;
+  margin-top: 1.5rem;
+}
+
+/* footer section */
+footer {
+  background-color: #07374a;
+  height: 100hv;
+  padding: 1.6rem 0;
+  text-align: center;
+}
+footer p {
+  font-size: 1rem;
+  color: #fff;
+}
